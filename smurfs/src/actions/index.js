@@ -38,3 +38,21 @@ export const addSmurf = smurf => dispatch => {
       return dispatch({ type: ADD_SMURF_FAILURE, payload: err.message });
     });
 };
+
+export const DELETE_SMURF = "DELETE_SMURF";
+export const DELETE_SMURF_SUCCESS = "DELETE_SMURF_SUCCESS";
+export const DELETE_SMURF_FAILURE = "DELETE_SMURF_FAILURE";
+
+export const deleteSmurf = id => dispatch => {
+  dispatch({ type: DELETE_SMURF });
+  axios
+    .delete(`http://localhost:3333/smurfs/${id}`)
+    .then(res => {
+      console.log(res);
+      dispatch({ type: DELETE_SMURF_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch({ type: DELETE_SMURF_FAILURE, payload: err.message });
+    });
+};

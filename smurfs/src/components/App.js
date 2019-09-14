@@ -1,22 +1,17 @@
-import React, { Component, useEffect } from "react";
+import React, { useEffect } from "react";
 import SmurfForm from "./SmurfForm";
-import { getSmurfs } from "../actions";
-import { connect } from "react-redux";
+import Smurfs from "./Smurfs";
 import "./App.css";
 
-class App extends Component {
-  componentDidMount() {
-    this.props.getSmurfs();
-  }
-  render() {
-    return (
-      <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <SmurfForm />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="App">
+      <h1>SMURFS! 2.0 W/ Redux</h1>
+      <SmurfForm />
+      <Smurfs />
+    </div>
+  );
+};
 
 // const App = props => {
 //   const { smurfs, getSmurfs } = props;
@@ -35,7 +30,4 @@ class App extends Component {
 //   );
 // };
 
-export default connect(
-  null,
-  { getSmurfs }
-)(App);
+export default App;
