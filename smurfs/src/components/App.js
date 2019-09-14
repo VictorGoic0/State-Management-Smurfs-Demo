@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import SmurfForm from "./SmurfForm";
 import Smurfs from "./Smurfs";
 import "./App.css";
@@ -13,6 +13,7 @@ const App = () => {
   );
 };
 
+// Moved get request to the Smurfs component
 // const App = props => {
 //   const { smurfs, getSmurfs } = props;
 
