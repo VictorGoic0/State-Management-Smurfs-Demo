@@ -37,6 +37,7 @@ const Smurfs = props => {
   );
 };
 
+// Class version of this component
 // class Smurfs extends Component {
 //     componentDidMount() {
 //       this.props.getSmurfs();

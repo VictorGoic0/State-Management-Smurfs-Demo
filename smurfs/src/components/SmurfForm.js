@@ -4,6 +4,10 @@ import { connect } from "react-redux";
 import { addSmurf } from "../actions";
 
 const SmurfForm = props => {
+  const [name, setName] = useState("");
+  const [height, setHeight] = useState("");
+  const [age, setAge] = useState("");
+
   const addNewSmurf = e => {
     e.preventDefault();
     const newSmurf = {
@@ -23,10 +27,6 @@ const SmurfForm = props => {
         alert("POST request failed.");
       });
   };
-
-  const [name, setName] = useState("");
-  const [height, setHeight] = useState("");
-  const [age, setAge] = useState("");
 
   return (
     <div className="SmurfForm">
