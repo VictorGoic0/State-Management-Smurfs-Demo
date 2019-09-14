@@ -9,7 +9,7 @@ const Smurfs = props => {
 
   useEffect(() => {
     getSmurfs();
-  }, []);
+  }, [getSmurfs]);
 
   if (fetchingSmurfs) {
     return (
