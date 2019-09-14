@@ -11,13 +11,14 @@ const SmurfForm = props => {
   const addNewSmurf = e => {
     e.preventDefault();
     const newSmurf = {
-      name: name,
+      name,
       height,
       age
     };
     props
       .addSmurf(newSmurf)
       .then(() => {
+        // Clear the state on a successful POST
         setHeight("");
         setAge("");
         setName("");
@@ -36,14 +37,14 @@ const SmurfForm = props => {
           placeholder="name"
           value={name}
           name="name"
-          // required
+          required
         />
         <input
           onChange={e => setHeight(e.target.value)}
           placeholder="height"
           value={height}
           name="height"
-          // required
+          required
         />
         <input
           type="number"
@@ -51,7 +52,7 @@ const SmurfForm = props => {
           value={age}
           placeholder="age"
           name="age"
-          // required
+          required
         />
         <button type="submit">Add to the village</button>
       </form>
